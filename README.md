@@ -1,20 +1,19 @@
 # TypeScript compiler for AEM Client Libraries
 
 # Installation
-Install the bundle with maven or felix console
+Install the bundle with maven or via the Felix console (/system/console).
 ```
 	$ mvn clean install -PautoInstallBundle -Daem.host=localhost -Daem.port=4504
 ```
 
-If the bundle is not getting in running state because of the missing dependency to jdk.nashorn.api.scripting you have to add
+If the bundle is not getting in running state because dependency to jdk.nashorn.api.scripting can't be resolved, you have to add
 ``` 
     ,jdk.nashorn.api.scripting;version\="0.0.0.1_008_JavaSE"
-``` 
-    
+```     
 to the jre-1.8 property in your sling.properties file (crx-quickstart/conf) 
     
 ## Usage
-Each file of your usual Client Library which have a ***.ts*** extension will be processed by this compiler.
+Every file of your typical client library with a ***.ts*** extension will be processed by this compiler.
 
 Client Library example: 
 ```
