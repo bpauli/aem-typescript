@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.bpauli.aem</groupId>
@@ -19,8 +20,8 @@
         <connection>scm:git:git@github.com:bpauli/aem-typescript.git</connection>
         <url>scm:git:git@github.com:bpauli/aem-typescript.git</url>
         <developerConnection>scm:git:git@github.com:bpauli/aem-typescript.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <distributionManagement>
         <repository>
@@ -119,8 +120,10 @@
         </resources>
     </build>
 
+    <!-- ======================================================================= -->
+    <!-- P R O F I L E S                                                         -->
+    <!-- ======================================================================= -->
     <profiles>
-        <!-- Development profile: install only the bundle -->
         <profile>
             <id>autoInstallBundle</id>
             <activation>
@@ -229,4 +232,36 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!-- ======================================================================= -->
+    <!-- R E P O S I T O R I E S                                                 -->
+    <!-- ======================================================================= -->
+    <repositories>
+        <repository>
+            <id>adobe-public-releases</id>
+            <name>Adobe Public Repository</name>
+            <url>https://repo.adobe.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>adobe-public-releases</id>
+            <name>Adobe Public Repository</name>
+            <url>https://repo.adobe.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
