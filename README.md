@@ -6,7 +6,7 @@ Install the bundle with maven or via the Felix console (/system/console).
 	$ mvn clean install -PautoInstallBundle -Daem.host=localhost -Daem.port=4504
 ```
 
-If the bundle is not getting in running state because dependency to jdk.nashorn.api.scripting can't be resolved, you have to add
+If the bundle doesn't get in running state because the dependency to jdk.nashorn.api.scripting can't be resolved, you have to add
 ``` 
     ,jdk.nashorn.api.scripting;version\="0.0.0.1_008_JavaSE"
 ```     
