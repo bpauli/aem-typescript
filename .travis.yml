@@ -8,19 +8,20 @@ cache:
   - "$HOME/apache-maven-3.3.9"
 
 before_install:
-- export M2_HOME=$HOME/apache-maven-3.3.9
-- if [ ! -d $M2_HOME/bin ]; then curl https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz | tar zxf - -C $HOME; fi
-- export PATH=$M2_HOME/bin:$PATH
+  - sudo apt-get update
+  - sudo apt-get install oracle-java8-installer
+  - export M2_HOME=$HOME/apache-maven-3.3.9
+  - if [ ! -d $M2_HOME/bin ]; then curl https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz | tar zxf - -C $HOME; fi
+  - export PATH=$M2_HOME/bin:$PATH
 
-sudo: false
+sudo: required
 
 install: true
 
 env:
 - MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
-# have to skip tests for now as travis currently includes only jdk8u31
-script: mvn verify -B -DskipTests=true -Darguments=-DskipTests
+script: mvn verify -B
 
 notifications:
   email: false
