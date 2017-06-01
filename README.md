@@ -1,4 +1,5 @@
 # TypeScript compiler for AEM Client Libraries
+[![Build Status](https://travis-ci.org/bpauli/aem-typescript.svg?branch=master)](https://travis-ci.org/bpauli/aem-typescript)
 
 # Installation
 Install the bundle with maven or via the Felix console (/system/console).
